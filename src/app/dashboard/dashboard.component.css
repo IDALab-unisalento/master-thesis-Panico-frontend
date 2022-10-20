@@ -1,0 +1,43 @@
+.center {
+    margin: auto;
+    min-width: 100%;
+    padding: 10px;
+    text-align: center;
+ 
+  }
+
+.card-chart:hover{
+    background-color: rgb(234, 235, 234);
+    transform: scale(1.1);
+    filter: blur(1.5px); /* Chrome, Safari, Opera */
+    cursor: pointer;
+
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .center-click {
+
+    position: relative;
+    top: -300px;
+    display: none;
+
+  }
+  
+  .center-click:hover {
+    cursor: pointer;
+  }
+
+
+  .card-chart:hover + .center-click {
+    display: block;
+}

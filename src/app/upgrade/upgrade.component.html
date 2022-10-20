@@ -1,0 +1,237 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 ml-auto mr-auto">
+                <div class="card">
+                    <div class="card-header card-header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header card-header-danger">
+                                        <h4 class="card-title ">Meteo</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            <img class='meteo-pic'src="https://www.forumforyou.it/Image/meteo17m.gif"   />
+                                                            Temperature
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.temperature}}°
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <img class='meteo-pic'src="https://www.forumforyou.it/Image/meteo17m.gif"   />
+                                                            Perceived temperature
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.temperature_feels_like}}°
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <img class='meteo-pic'src="https://operaenergy.in/wp-content/uploads/2022/07/opera_mv2-1.gif"   />
+                                                            Wind speed
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.wind_speed}} m/s
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <img class='meteo-pic'src="https://www.cloudhacktech.cf/wp-content/uploads/2021/05/loading-1.gif"   />
+                                                            Clouds percentage
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.clouds}} %
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <img class='meteo-pic'src="https://www.meteoincalabria.com/custom/mappelive/mappelive.php?id=satellite_infrarosso_europa"   />
+                                                            Atmospheric pressure
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.pressure}} hPa
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <img class='meteo-pic'src="https://st3.depositphotos.com/4060975/18536/v/950/depositphotos_185360452-stock-illustration-water-drop-percentage-mark-shows.jpg"   />
+                                                            Humidity percentage
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.humidity}} %
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header card-header-danger">
+                                        <h4 class="card-title ">Air Pollution</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            CO
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.co}} μg/m<sup>3</sup>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            NO<sub>2</sub>
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.no2}} μg/m<sup>3</sup>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            0<sub>3</sub>
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.o3}} μg/m<sup>3</sup>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            SO<sub>2</sub>
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.so2}} μg/m<sup>3</sup>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            Pm<sub>2.5</sub>
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.pm2_5}} μg/m<sup>3</sup>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            Pm<sub>10</sub>
+                                                        </th>
+                                                        <td class="text-primary">
+                                                            {{X.pm10}} μg/m<sup>3</sup>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                    <small style="text-align: center;"><i> All rights reserved <a href='https://www.accuweather.com/'>https://www.accuweather.com/   </a></i></small>
+                    
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header card-header-danger">
+                                    <h4 class="card-title ">Fatigue questionnaire</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <th>
+                                                        <mat-form-field appearance="fill">
+                                                            <mat-label>FATIGUE PERCEIVED</mat-label>
+                                                            <mat-select [(ngModel)]="X.fatigue_before" name="fatigue">
+                                                              <mat-option *ngFor="let mark of marks" [value]="mark">
+                                                                {{mark}}
+                                                              </mat-option>
+                                                            </mat-select>
+                                                          </mat-form-field>
+                                                    </th>
+
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        
+                                                        <mat-form-field appearance="fill">
+                                                            <mat-label>CHARGE PERCEIVED</mat-label>
+                                                            <mat-select [(ngModel)]="X.charge_before" name="charge">
+                                                                <mat-option *ngFor="let mark of marks" [value]="mark">
+                                                                {{mark}}
+                                                              </mat-option>
+                                                            </mat-select>
+                                                          </mat-form-field>
+                                                    </th>
+                                                </tr>
+                                        
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4" >
+                                <button mat-raised-button color="warn" (click)="buttonPressed()" class="center" [disabled]="X.charge_before == 0 || X.fatigue_before == 0">Make a prediction</button>
+                                <small *ngIf="X.charge_before == 0 || X.fatigue_before == 0"class='text-danger'style="text-align: center;"><i> Complete the questionnaire first </i></small>
+
+                            </div>
+                            <div class="col-md-4"></div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4"> 
+                                <div class="card barney" style="min-height: 250px;" *ngIf="showSpinner">
+                                    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                                </div> 
+
+
+                            </div>
+                            <div class="col-md-4"></div>
+
+                        </div>
+                    </div>
+                    <div class="row" style="min-height: 100px;"></div>
+
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <div *ngIf="showPrediction">    
+                                <div class="card-header-success center">  Estimated time to run 73 m: {{prediction}} s</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+
+                    </div>
+                    
+                    <div class="row" style="min-height: 100px;"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

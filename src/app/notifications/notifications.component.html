@@ -1,0 +1,464 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-chart">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title ">BPM trend during {{train.date}} train
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div id="bpm" style="height:600px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card card-chart">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title ">Times trend during {{train.date}} train
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div id="times" style="height:400px;"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-chart bar">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title ">Times distribution
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div id="pieTimes" style="height:400px;"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Train information</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            Date
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.date}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Train type
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.train_name}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Fatigue perceived before test
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.perceived_fatigue_before_test}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Charge perceived before test
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.perceived_charge_before_test}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Fatigue perceived after test
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.perceived_fatigue_after_test}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            After train
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.after_train}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Outdoor
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.outdoor}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Data quality
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.quality}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title "> Technical details</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            Interval minutes
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.interval_minutes}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            First half sprints
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train?.first_half_sprint}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            First half push sprints
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.first_half_sprint_push}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Second half sprints
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train?.second_half_sprint}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Second half push sprints
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.second_half_sprint_push}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            First half Max bpm 
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.max_bpm_fh}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            First half push phase Max bpm 
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.max_bpm_fh_push}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Second half Max bpm 
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.max_bpm_sh}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Second half push phase Max bpm 
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.max_bpm_sh_push}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            First half Min bpm 
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.min_bpm_fh}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            First half push phase Min bpm 
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.min_bpm_fh_push}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Second half Min bpm 
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.min_bpm_sh}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Second half push phase Min bpm 
+                                        </th>
+                                        <td class="text-primary">
+                                            {{train.min_bpm_sh_push}}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>
+                                            Min time
+                                        </th>
+                                        <td class="text-primary">
+                                            {{minTime}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Max time
+                                        </th>
+                                        <td class="text-primary">
+                                            {{maxTime}}
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Meteo information</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr *ngFor="let key of meteoKeys; index as i">
+                                        <th>
+                                            {{key}}
+                                        </th>
+                                        <td class="text-primary">
+                                            {{meteoValues[i]}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-chart">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">BPM-times comparison
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="BPM-times" style="height:600px;"></div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-chart">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">First half bpm
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="fhbpm" style="height:400px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-chart">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Second half bpm
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="shbpm" style="height:400px;"></div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-chart">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title "> First half times
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="fhTimes" style="height:400px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-chart">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Second half times
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="shTimes" style="height:400px;"></div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--
+          <div class="card-body">
+              <div class="row">
+                  <div class="col-md-6">
+                      <h4 class="card-title">Notifications Style</h4>
+                      <div class="alert alert-info">
+                          <span>This is a plain notification</span>
+                      </div>
+                      <div class="alert alert-info">
+                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="material-icons">close</i>
+                          </button>
+                          <span>This is a notification with close button.</span>
+                      </div>
+                      <div class="alert alert-info alert-with-icon" data-notify="container">
+                          <i class="material-icons" data-notify="icon">add_alert</i>
+                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="material-icons">close</i>
+                          </button>
+                          <span data-notify="message">This is a notification with close button and icon.</span>
+                      </div>
+                      <div class="alert alert-info alert-with-icon" data-notify="container">
+                          <i class="material-icons" data-notify="icon">add_alert</i>
+                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="material-icons">close</i>
+                          </button>
+                          <span data-notify="message">This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <h4 class="card-title">Notification states</h4>
+                      <div class="alert alert-info">
+                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="material-icons">close</i>
+                          </button>
+                          <span>
+                              <b> Info - </b> This is a regular notification made with ".alert-info"</span>
+                      </div>
+                      <div class="alert alert-success">
+                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="material-icons">close</i>
+                          </button>
+                          <span>
+                              <b> Success - </b> This is a regular notification made with ".alert-success"</span>
+                      </div>
+                      <div class="alert alert-warning">
+                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="material-icons">close</i>
+                          </button>
+                          <span>
+                              <b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
+                      </div>
+                      <div class="alert alert-danger">
+                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="material-icons">close</i>
+                          </button>
+                          <span>
+                              <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
+                      </div>
+                      <div class="alert alert-primary">
+                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="material-icons">close</i>
+                          </button>
+                          <span>
+                              <b> Primary - </b> This is a regular notification made with ".alert-primary"</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-12">
+              <div class="places-buttons">
+                  <div class="row">
+                      <div class="col-md-6 ml-auto mr-auto text-center">
+                          <h4 class="card-title">
+                              Notifications Places
+                              <p class="category">Click to view notifications</p>
+                          </h4>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','left')">Top Left</button>
+                              </div>
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','center')">Top Center</button>
+                              </div>
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','right')">Top Right</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('bottom','left')">Bottom Left</button>
+                              </div>
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('bottom','center')">Bottom Center</button>
+                              </div>
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('bottom','right')">Bottom Right</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        -->
+  </div>
+</div>

@@ -1,0 +1,128 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+        <div class="card-header card-header-danger">
+            <h4 class="card-title">Sleep analysis</h4>
+            <p class="card-category">Daily trend</p>
+        </div>
+        <div class="card-body">
+            <div id="typography">
+                <div class="card-title">
+                    <div class="center">  
+                        <i (click)="refreshChart('older')" class="icon icon-left fa fa-chevron-circle-left" aria-hidden="true"></i>
+                         <b class="title">   From: {{sleepData[minIdxViewd]?.date}} to: {{sleepData[maxIdxViewd-1]?.date}}</b>
+                         <i (click)="refreshChart('latest')" class="icon icon-right fa fa-chevron-circle-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <canvas class="my-4" id="sleepChart" width="800" height="300"></canvas>
+                
+            </div>
+        </div>
+    </div>
+
+            <div class="card card-chart">
+
+                <div class="card-header card-header-info">
+                    <div class="ct-chart" id="HRV" style="height: 300px;"></div>
+                </div>
+                <div class="card-body">
+                    
+                    <h4 class="card-title">Max HRV</h4>
+                    <p class="card-category">
+                        <span class="text-success"></span> Last 7 days trend
+                        <span class="text-success"><i [ngClass]="'improvment > 0' ? 'fa fa-long-arrow-up' : 'fa fa-long-arrow-down'"></i> {{improvment}}% </span> Last day
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="row" *ngFor="let anomaly of allSleepAnomalies; let j = index">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Sleep anomaly on: {{anomaly.date}} 
+                            <i *ngIf="!showButtons[j]" class="material-icons icon-down"(click)="show(j)">arrow_circle_down</i>  
+                            <i *ngIf="showButtons[j]" class="material-icons icon-down"(click)="show(j)">arrow_circle_up</i> 
+                        </h4>
+                        <p class="card-category">Daily trend</p>
+                    </div>
+                    <div class="card-body" *ngIf="showButtons[j]">
+                        <div class="row">
+                            <div class="col-md-6 card" >
+                                <div class="card-header card-header-danger">
+                                    <h4 class="card-title ">Radar plot of {{anomaly.date}}</h4>
+                                </div>
+                                <div class="card-body">
+                                    <canvas class="my-4" id="{{'anomalyChart' + j}}" ></canvas>  
+                                </div>
+                                <div class="card-footer">
+
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header card-header-danger">
+                                        <h4 class="card-title ">Anomalies Table of {{anomaly.date}}</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table" style="text-align: center;">
+                                                <thead class=" text-primary">
+            
+                                                    <th>
+                                                        Column name
+                                                    </th>
+                                                    <th>
+                                                        Value
+                                                    </th>
+                                                    <th>
+                                                        Percentile Target
+                                                    </th>
+                                                    <th>
+                                                        Percentage Delta
+                                                    </th>
+                                                </thead>
+                                                <tbody >
+                                                    <tr *ngFor="let label of anomaly.radar_labels_75; let i = index" style="background: rgb(247, 228, 228)">
+                                                        <td>
+                                                            {{label}}
+                                                        </td>
+                                                        <td class="text-danger">
+                                                            {{anomaly.values_75[i]}}
+                                                        </td>
+                                                        <td class="text-primary">
+                                                            {{anomaly.perc_75[i]}}
+                                                        </td>
+                                                        <td class="text-danger">
+                                                            +{{anomaly.radar_scores_75[i]}} %
+                                                        </td>
+                                                    </tr>
+                                                    <tr *ngFor="let label of anomaly.radar_labels_25; let i = index" style="background: rgb(231, 249, 237)">
+            
+                                                        <td>
+                                                            {{label}}
+                                                        </td>
+                                                        <td class="text-success">
+                                                            {{anomaly.values_25[i]}}
+                                                        </td>
+                                                        <td class="text-primary">
+                                                            {{anomaly.perc_25[i]}}
+                                                        </td>
+                                                        <td class="text-success">
+                                                            -{{anomaly.radar_scores_25[i]}} %
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

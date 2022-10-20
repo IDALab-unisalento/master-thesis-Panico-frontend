@@ -1,0 +1,100 @@
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="card card-plain">
+          <div class="card-header card-header-danger">
+              <h4 class="card-title">My Trainings</h4>
+              <p class="card-category">All data at your fingertips
+                  <!--<a target="_blank" href="https://fonts.google.com/icons">Google</a>-->
+              </p>
+          </div>
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="card-body">
+                      <div class="iframe-container d-none d-lg-block">
+                          <div src="https://material.io/design/iconography/system-icons.html#grid-and-keyline-shapes">
+                            <div class="row">
+                                <div class="col-md-4" *ngFor="let train of allTrain30; index as i">
+                                    <div class="card card-chart" routerLink="/train/{{this.allTrain30[i]._id}}">
+                                        <div class="card-header card-header-danger">
+                                            <h4 class="card-title ">Training date: {{train.date}}
+                                                <i class="material-icons">calendar_month</i> 
+                                            </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <canvas class="my-4" id="{{'trainChart30' + i}}" ></canvas>  
+
+                                            <h4 class="card-title center">30 seconds sprints train</h4>
+                                            <p class="card-category">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+                <div class="card-body">
+                    <div class="iframe-container d-none d-lg-block">
+                        <div src="https://material.io/design/iconography/system-icons.html#grid-and-keyline-shapes">
+                          <div class="row">
+                              <div class="col-md-4" *ngFor="let train of allTrain40; index as i">
+                                  <div class="card card-chart" routerLink="/train/{{this.allTrain40[i]._id}}">
+                                      <div class="card-header card-header-warning">
+                                          <h4 class="card-title ">Training date: {{train.date}}
+                                              <i class="material-icons">calendar_month</i> 
+                                          </h4>
+                                      </div>
+                                      <div class="card-body">
+                                          <canvas class="my-4" id="{{'trainChart40' + i}}" ></canvas>  
+
+                                          <h4 class="card-title center">40 seconds sprints train</h4>
+                                          <p class="card-category">
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-body">
+                    <div class="iframe-container d-none d-lg-block">
+                        <div src="https://material.io/design/iconography/system-icons.html#grid-and-keyline-shapes">
+                          <div class="row">
+                              <div class="col-md-4" *ngFor="let train of allTrain60; index as i">
+                                  <div class="card card-chart" routerLink="/train/{{this.allTrain60[i]._id}}">
+                                      <div class="card-header card-header-success">
+                                          <h4 class="card-title ">Training date: {{train.date}}
+                                              <i class="material-icons">calendar_month</i> 
+                                          </h4>
+                                      </div>
+                                      <div class="card-body">
+                                          <canvas class="my-4" id="{{'trainChart60' + i}}" ></canvas>  
+
+                                          <h4 class="card-title center">60 seconds sprints train</h4>
+                                          <p class="card-category">
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <div>
+          </div>
+      </div>
+  </div>
+</div>

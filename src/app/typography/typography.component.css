@@ -1,0 +1,43 @@
+.center {
+    margin: auto;
+    min-width: 100%;
+    padding: 10px;
+    text-align: center;
+ 
+  }
+
+  .icon{
+    font-size: 34px;
+    color: rgb(172, 172, 172);
+  }
+
+  .icon-left{
+    position: relative;
+    left: -10px;
+
+  }
+
+  .icon-right{
+    position: relative;
+    right: -10px;
+  }
+
+  .icon:hover{
+    cursor: pointer;
+    color: rgb(109, 109, 109);
+
+  }
+
+  .icon-down{
+    position: absolute;
+    right: 100px;
+    font-size: 60px;
+    top:10px;
+
+  }
+
+  .icon-down:hover{
+    cursor: pointer;
+    color: rgb(93, 232, 156);
+
+  }
